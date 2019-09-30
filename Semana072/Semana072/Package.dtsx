@@ -1,0 +1,1542 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/27/2019 6:48:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-Q02Q4RT"
+  DTS:CreatorName="DESKTOP-Q02Q4RT\david"
+  DTS:DTSID="{D3C0DF03-9B09-420C-9C9E-AEAE88879A13}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{70D144B2-829A-4589-8029-9DFEF0BA4D22}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LOCALHOST.NORTHWIND]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A93E3013-89A8-4F86-A502-60CC280E53E8}"
+      DTS:ObjectName="LOCALHOST.NORTHWIND">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LOCALHOST;Initial Catalog=NORTHWIND;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.PRUEBA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8DAE4CEE-BFD7-4065-B4EA-F933FFFA67E1}"
+      DTS:ObjectName="localhost.PRUEBA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=PRUEBA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS0CQxGWGA0KzLcvznFdgKAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC48Ts3Ofa5WmHyPMB7Ndv05vt/PlZ6ClcPY2wvQ9mD8wAAAAAOgAAAAAIAACAAAABYLZ+8uZkbjbA+7ZVV51OtrjxXyMvxFy4f/QwjzphBtxAAAADSJx6t/O3OIHQj6hqBLE43QAAAAPWD41eqRzVs4D5p4NYp0rHuZLw5VNiAea+K2lpR1MvvZPCWJdZ7F5LPwzR7uMoCnV0Zq3St3V2rxI+4EiNnoW8</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\etl ejemplo 2"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{2C5AB0BD-38AF-43C7-8B67-6AEA579A5917}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="etl ejemplo 2"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\etl ejemplo 2\Búsqueda"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Employees]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Employees]) [refTable]
+where [refTable].[EmployeeID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LastName" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FirstName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Title" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TitleOfCourtesy" dataType="DT_WSTR" length="25" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BirthDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="HireDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Address" dataType="DT_WSTR" length="60" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Region" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostalCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="15" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="HomePhone" dataType="DT_WSTR" length="24" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Extension" dataType="DT_WSTR" length="4" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Photo" dataType="DT_IMAGE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Notes" dataType="DT_NTEXT" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReportsTo" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PhotoPath" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[EmployeeID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\etl ejemplo 2\Búsqueda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LOCALHOST.NORTHWIND]"
+                  connectionManagerRefId="Package.ConnectionManagers[LOCALHOST.NORTHWIND]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\etl ejemplo 2\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\Búsqueda.Inputs[Entrada de búsqueda].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">EmployeeID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\etl ejemplo 2\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copiar columna"
+                      length="20"
+                      lineageId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">LastName</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\etl ejemplo 2\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\etl ejemplo 2\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\etl ejemplo 2\División condicional"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="División condicional"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\etl ejemplo 2\División condicional.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\División condicional.Inputs[Entrada de división condicional].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="LastName"
+                      lineageId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\etl ejemplo 2\División condicional.Outputs[FILTRO 1]"
+                  description="Salida 3 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="FILTRO 1"
+                  synchronousInputId="Package\etl ejemplo 2\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]} == "Davolio"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">LastName == "Davolio"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\etl ejemplo 2\División condicional.Outputs[FILTRO 2]"
+                  description="Salida 4 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="FILTRO 2"
+                  synchronousInputId="Package\etl ejemplo 2\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]} == "Fuller"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">LastName == "Fuller"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\etl ejemplo 2\División condicional.Outputs[FILTRO 3]"
+                  description="Salida 5 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="FILTRO 3"
+                  synchronousInputId="Package\etl ejemplo 2\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]} == "Leverling"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">LastName == "Leverling"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\etl ejemplo 2\División condicional.Outputs[avoli]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="avoli"
+                  synchronousInputId="Package\etl ejemplo 2\División condicional.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\etl ejemplo 2\División condicional.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\etl ejemplo 2\División condicional.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\etl ejemplo 2\Ordenar"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\etl ejemplo 2\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\Ordenar.Inputs[Entrada de ordenación].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\Ordenar.Inputs[Entrada de ordenación].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\Ordenar.Inputs[Entrada de ordenación].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\Ordenar.Inputs[Entrada de ordenación].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderID]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderID]"
+                      name="OrderID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[EmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderDate]"
+                      name="OrderDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderDate]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\etl ejemplo 2\Origen de OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Orders]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\etl ejemplo 2\Origen de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LOCALHOST.NORTHWIND]"
+                  connectionManagerRefId="Package.ConnectionManagers[LOCALHOST.NORTHWIND]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderID]"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
+                      length="5"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[EmployeeID]"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderDate]"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipVia]"
+                      dataType="i4"
+                      name="ShipVia" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ShipName" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipAddress]"
+                      dataType="wstr"
+                      length="60"
+                      name="ShipAddress" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCity" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipRegion]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipRegion" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipPostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="ShipPostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCountry" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[OrderID]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[OrderID]"
+                      name="OrderID" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[EmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[OrderDate]"
+                      name="OrderDate" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\etl ejemplo 2\PEDIDO 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="PEDIDO 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[PEDIDOS1]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\etl ejemplo 2\PEDIDO 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PRUEBA.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PRUEBA.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[empleado]"
+                      lineageId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo]"
+                      dataType="i4"
+                      name="codigo" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente]"
+                      dataType="wstr"
+                      length="5"
+                      name="cliente" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[empleado]"
+                      dataType="wstr"
+                      length="20"
+                      name="empleado" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\etl ejemplo 2\PEDIDO 1.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\PEDIDO 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\PEDIDO 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\etl ejemplo 2\PEDIDO 2"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="PEDIDO 2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[PEDIDOS2]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\etl ejemplo 2\PEDIDO 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PRUEBA.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PRUEBA.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[empleado]"
+                      lineageId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo]"
+                      dataType="i4"
+                      name="codigo" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente]"
+                      dataType="wstr"
+                      length="5"
+                      name="cliente" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[empleado]"
+                      dataType="wstr"
+                      length="20"
+                      name="empleado" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\etl ejemplo 2\PEDIDO 2.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\PEDIDO 2.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 2.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\PEDIDO 2.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\etl ejemplo 2\PEDIDO 3"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="PEDIDO 3"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[PEDIDOS3]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\etl ejemplo 2\PEDIDO 3.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.PRUEBA.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.PRUEBA.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[empleado]"
+                      lineageId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                      lineageId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación].Columns[OrderDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[codigo]"
+                      dataType="i4"
+                      name="codigo" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[cliente]"
+                      dataType="wstr"
+                      length="5"
+                      name="cliente" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[empleado]"
+                      dataType="wstr"
+                      length="20"
+                      name="empleado" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\etl ejemplo 2\PEDIDO 3.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\PEDIDO 3.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\etl ejemplo 2\PEDIDO 3.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\etl ejemplo 2\PEDIDO 3.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\etl ejemplo 2.Paths[FILTRO 1]"
+              endId="Package\etl ejemplo 2\PEDIDO 1.Inputs[Entrada de destino de OLE DB]"
+              name="FILTRO 1"
+              startId="Package\etl ejemplo 2\División condicional.Outputs[FILTRO 1]" />
+            <path
+              refId="Package\etl ejemplo 2.Paths[FILTRO 2]"
+              endId="Package\etl ejemplo 2\PEDIDO 2.Inputs[Entrada de destino de OLE DB]"
+              name="FILTRO 2"
+              startId="Package\etl ejemplo 2\División condicional.Outputs[FILTRO 2]" />
+            <path
+              refId="Package\etl ejemplo 2.Paths[FILTRO 3]"
+              endId="Package\etl ejemplo 2\PEDIDO 3.Inputs[Entrada de destino de OLE DB]"
+              name="FILTRO 3"
+              startId="Package\etl ejemplo 2\División condicional.Outputs[FILTRO 3]" />
+            <path
+              refId="Package\etl ejemplo 2.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\etl ejemplo 2\División condicional.Inputs[Entrada de división condicional]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\etl ejemplo 2\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\etl ejemplo 2.Paths[Salida de ordenación]"
+              endId="Package\etl ejemplo 2\Búsqueda.Inputs[Entrada de búsqueda]"
+              name="Salida de ordenación"
+              startId="Package\etl ejemplo 2\Ordenar.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\etl ejemplo 2.Paths[Salida de origen de OLE DB]"
+              endId="Package\etl ejemplo 2\Ordenar.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\etl ejemplo 2\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="140,42"
+          Id="Package\etl ejemplo 2"
+          TopLeft="183,116" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\etl ejemplo 2">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164,42"
+          Id="Package\etl ejemplo 2\Origen de OLE DB"
+          TopLeft="163,20" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\etl ejemplo 2\Búsqueda"
+          TopLeft="354,159" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\etl ejemplo 2\Ordenar"
+          TopLeft="185,87" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\etl ejemplo 2\División condicional"
+          TopLeft="136,220" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\etl ejemplo 2\PEDIDO 3"
+          TopLeft="346,315" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\etl ejemplo 2\PEDIDO 2"
+          TopLeft="196,315" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\etl ejemplo 2\PEDIDO 1"
+          TopLeft="37,314" />
+        <EdgeLayout
+          Id="Package\etl ejemplo 2.Paths[Salida de origen de OLE DB]"
+          TopLeft="244.25,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\etl ejemplo 2.Paths[Salida de ordenación]"
+          TopLeft="243.5,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173,30"
+              Start="0,0"
+              End="173,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="4,15" />
+                  <mssgle:LineSegment
+                    End="169,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="169,15"
+                    Point2="173,15"
+                    Point3="173,19" />
+                  <mssgle:LineSegment
+                    End="173,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\etl ejemplo 2.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="354,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47,61"
+              Start="0,0"
+              End="-39.5,61">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-19.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.5,0"
+                    Point2="-23.5,0"
+                    Point3="-23.5,4" />
+                  <mssgle:LineSegment
+                    End="-23.5,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.5,57"
+                    Point2="-23.5,61"
+                    Point3="-27.5,61" />
+                  <mssgle:LineSegment
+                    End="-39.5,61" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.3190234375,-18.1953125,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\etl ejemplo 2.Paths[FILTRO 1]"
+          TopLeft="194.333333333333,262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-94.3333333333333,52"
+              Start="0,0"
+              End="-94.3333333333333,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0892236384705" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.0892236384705"
+                    Point2="0,21.0892236384705"
+                    Point3="-4,21.0892236384705" />
+                  <mssgle:LineSegment
+                    End="-90.3333333333333,21.0892236384705" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-90.3333333333333,21.0892236384705"
+                    Point2="-94.3333333333333,21.0892236384705"
+                    Point3="-94.3333333333333,25.0892236384705" />
+                  <mssgle:LineSegment
+                    End="-94.3333333333333,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-68.2122330729167,26.0892236384705,42.0911328125,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\etl ejemplo 2.Paths[FILTRO 2]"
+          TopLeft="221.5,262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.5,53"
+              Start="0,0"
+              End="37.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="33.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.5,26.5"
+                    Point2="37.5,26.5"
+                    Point3="37.5,30.5" />
+                  <mssgle:LineSegment
+                    End="37.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-2.48111328125,31.5,42.4622265625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\etl ejemplo 2.Paths[FILTRO 3]"
+          TopLeft="262.25,262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146.75,53"
+              Start="0,0"
+              End="146.75,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.2092130518234" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.2092130518234"
+                    Point2="0,18.2092130518234"
+                    Point3="4,18.2092130518234" />
+                  <mssgle:LineSegment
+                    End="142.75,18.2092130518234" />
+                  <mssgle:CubicBezierSegment
+                    Point1="142.75,18.2092130518234"
+                    Point2="146.75,18.2092130518234"
+                    Point3="146.75,22.2092130518234" />
+                  <mssgle:LineSegment
+                    End="146.75,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="52.20736328125,23.2092130518234,42.3352734375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\etl ejemplo 2\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\etl ejemplo 2\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Employees]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\etl ejemplo 2\PEDIDO 3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\etl ejemplo 2\PEDIDO 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\etl ejemplo 2\PEDIDO 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

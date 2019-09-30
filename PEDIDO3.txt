@@ -1,0 +1,128 @@
+OrderID,CustomerID,EmployeeID,OrderDate,RequiredDate,ShippedDate,ShipVia,Freight,ShipName,ShipAddress,ShipCity,ShipRegion,ShipPostalCode,ShipCountry
+10638,LINOD,3,1997-08-20 00:00:00,1997-09-17 00:00:00,1997-09-01 00:00:00,1,158,44,LINO-Delicateses,Ave. 5 de Mayo Porlamar,I. de Margarita,Nueva Esparta,4980,Venezuela
+10594,OLDWO,3,1997-07-09 00:00:00,1997-08-06 00:00:00,1997-07-16 00:00:00,2,5,24,Old World Delicatessen,2743 Bering St.,Anchorage,AK,99508,USA
+11021,QUICK,3,1998-04-14 00:00:00,1998-05-12 00:00:00,1998-04-21 00:00:00,1,297,18,QUICK-Stop,Taucherstraße 10,Cunewalde,,01307,Germany
+10592,LEHMS,3,1997-07-08 00:00:00,1997-08-05 00:00:00,1997-07-16 00:00:00,1,32,1,Lehmanns Marktstand,Magazinweg 7,Frankfurt a.M.,,60528,Germany
+10568,GALED,3,1997-06-13 00:00:00,1997-07-11 00:00:00,1997-07-09 00:00:00,3,6,54,Galería del gastronómo,Rambla de Cataluña, 23,Barcelona,,8022,Spain
+11049,GOURL,3,1998-04-24 00:00:00,1998-05-22 00:00:00,1998-05-04 00:00:00,1,8,34,Gourmet Lanchonetes,Av. Brasil, 442,Campinas,SP,04876-786,Brazil
+10644,WELLI,3,1997-08-25 00:00:00,1997-09-22 00:00:00,1997-09-01 00:00:00,2,0,14,Wellington Importadora,Rua do Mercado, 12,Resende,SP,08737-363,Brazil
+11063,HUNGO,3,1998-04-30 00:00:00,1998-05-28 00:00:00,1998-05-06 00:00:00,2,81,73,Hungry Owl All-Night Grocers,8 Johnstown Road,Cork,Co. Cork,,Ireland
+10625,ANATR,3,1997-08-08 00:00:00,1997-09-05 00:00:00,1997-08-14 00:00:00,1,43,9,Ana Trujillo Emparedados y helados,Avda. de la Constitución 2222,México D.F.,,05021,Mexico
+10582,BLAUS,3,1997-06-27 00:00:00,1997-07-25 00:00:00,1997-07-14 00:00:00,2,27,71,Blauer See Delikatessen,Forsterstr. 57,Mannheim,,68306,Germany
+11052,HANAR,3,1998-04-27 00:00:00,1998-05-25 00:00:00,1998-05-01 00:00:00,1,67,26,Hanari Carnes,Rua do Paço, 67,Rio de Janeiro,RJ,05454-876,Brazil
+10581,FAMIA,3,1997-06-26 00:00:00,1997-07-24 00:00:00,1997-07-02 00:00:00,1,3,01,Familia Arquibaldo,Rua Orós, 92,Sao Paulo,SP,05442-030,Brazil
+10619,MEREP,3,1997-08-04 00:00:00,1997-09-01 00:00:00,1997-08-07 00:00:00,3,91,05,Mère Paillarde,43 rue St. Laurent,Montréal,Québec,H1J 1C3,Canada
+11041,CHOPS,3,1998-04-22 00:00:00,1998-05-20 00:00:00,1998-04-28 00:00:00,2,48,22,Chop-suey Chinese,Hauptstr. 31,Bern,,3012,Switzerland
+10572,BERGS,3,1997-06-18 00:00:00,1997-07-16 00:00:00,1997-06-25 00:00:00,2,116,43,Berglunds snabbköp,Berguvsvägen  8,Luleå,,S-958 22,Sweden
+10570,MEREP,3,1997-06-17 00:00:00,1997-07-15 00:00:00,1997-06-19 00:00:00,3,188,99,Mère Paillarde,43 rue St. Laurent,Montréal,Québec,H1J 1C3,Canada
+10576,TORTU,3,1997-06-23 00:00:00,1997-07-07 00:00:00,1997-06-30 00:00:00,3,18,56,Tortuga Restaurante,Avda. Azteca 123,México D.F.,,05033,Mexico
+11057,NORTS,3,1998-04-29 00:00:00,1998-05-27 00:00:00,1998-05-01 00:00:00,3,4,13,North/South,South House 300 Queensbridge,London,,SW7 1RZ,UK
+10753,FRANS,3,1997-11-25 00:00:00,1997-12-23 00:00:00,1997-11-27 00:00:00,1,7,7,Franchi S.p.A.,Via Monte Bianco 34,Torino,,10100,Italy
+10682,ANTON,3,1997-09-25 00:00:00,1997-10-23 00:00:00,1997-10-01 00:00:00,2,36,13,Antonio Moreno Taquería,Mataderos  2312,México D.F.,,05023,Mexico
+10856,ANTON,3,1998-01-28 00:00:00,1998-02-25 00:00:00,1998-02-10 00:00:00,2,58,43,Antonio Moreno Taquería,Mataderos  2312,México D.F.,,05023,Mexico
+10855,OLDWO,3,1998-01-27 00:00:00,1998-02-24 00:00:00,1998-02-04 00:00:00,1,170,97,Old World Delicatessen,2743 Bering St.,Anchorage,AK,99508,USA
+10854,ERNSH,3,1998-01-27 00:00:00,1998-02-24 00:00:00,1998-02-05 00:00:00,2,100,22,Ernst Handel,Kirchgasse 6,Graz,,8010,Austria
+10839,TRADH,3,1998-01-19 00:00:00,1998-02-16 00:00:00,1998-01-22 00:00:00,3,35,43,Tradiçao Hipermercados,Av. Inês de Castro, 414,Sao Paulo,SP,05634-030,Brazil
+10838,LINOD,3,1998-01-19 00:00:00,1998-02-16 00:00:00,1998-01-23 00:00:00,3,59,28,LINO-Delicateses,Ave. 5 de Mayo Porlamar,I. de Margarita,Nueva Esparta,4980,Venezuela
+10831,SANTG,3,1998-01-14 00:00:00,1998-02-11 00:00:00,1998-01-23 00:00:00,2,72,19,Santé Gourmet,Erling Skakkes gate 78,Stavern,,4110,Norway
+10548,TOMSP,3,1997-05-26 00:00:00,1997-06-23 00:00:00,1997-06-02 00:00:00,2,1,43,Toms Spezialitäten,Luisenstr. 48,Münster,,44087,Germany
+10988,RATTC,3,1998-03-31 00:00:00,1998-04-28 00:00:00,1998-04-10 00:00:00,2,61,14,Rattlesnake Canyon Grocery,2817 Milton Dr.,Albuquerque,NM,87110,USA
+10820,RATTC,3,1998-01-07 00:00:00,1998-02-04 00:00:00,1998-01-13 00:00:00,2,37,52,Rattlesnake Canyon Grocery,2817 Milton Dr.,Albuquerque,NM,87110,USA
+10817,KOENE,3,1998-01-06 00:00:00,1998-01-20 00:00:00,1998-01-13 00:00:00,2,306,07,Königlich Essen,Maubelstr. 90,Brandenburg,,14776,Germany
+10814,VICTE,3,1998-01-05 00:00:00,1998-02-02 00:00:00,1998-01-14 00:00:00,3,130,94,Victuailles en stock,2, rue du Commerce,Lyon,,69004,France
+10974,SPLIR,3,1998-03-25 00:00:00,1998-04-08 00:00:00,1998-04-03 00:00:00,3,12,96,Split Rail Beer & Ale,P.O. Box 555,Lander,WY,82520,USA
+10860,FRANR,3,1998-01-29 00:00:00,1998-02-26 00:00:00,1998-02-04 00:00:00,3,19,26,France restauration,54, rue Royale,Nantes,,44000,France
+10879,WILMK,3,1998-02-10 00:00:00,1998-03-10 00:00:00,1998-02-12 00:00:00,3,8,5,Wilman Kala,Keskuskatu 45,Helsinki,,21240,Finland
+10964,SPECD,3,1998-03-20 00:00:00,1998-04-17 00:00:00,1998-03-24 00:00:00,2,87,38,Spécialités du monde,25, rue Lauriston,Paris,,75016,France
+10938,QUICK,3,1998-03-10 00:00:00,1998-04-07 00:00:00,1998-03-16 00:00:00,2,31,89,QUICK-Stop,Taucherstraße 10,Cunewalde,,01307,Germany
+10925,HANAR,3,1998-03-04 00:00:00,1998-04-01 00:00:00,1998-03-13 00:00:00,1,2,27,Hanari Carnes,Rua do Paço, 67,Rio de Janeiro,RJ,05454-876,Brazil
+10924,BERGS,3,1998-03-04 00:00:00,1998-04-01 00:00:00,1998-04-08 00:00:00,2,151,52,Berglunds snabbköp,Berguvsvägen  8,Luleå,,S-958 22,Sweden
+10918,BOTTM,3,1998-03-02 00:00:00,1998-03-30 00:00:00,1998-03-11 00:00:00,3,48,83,Bottom-Dollar Markets,23 Tsawassen Blvd.,Tsawassen,BC,T2F 8M4,Canada
+10947,BSBEV,3,1998-03-13 00:00:00,1998-04-10 00:00:00,1998-03-16 00:00:00,2,3,26,B's Beverages,Fauntleroy Circus,London,,EC2 5NT,UK
+10806,VICTE,3,1997-12-31 00:00:00,1998-01-28 00:00:00,1998-01-05 00:00:00,2,22,11,Victuailles en stock,2, rue du Commerce,Lyon,,69004,France
+10911,GODOS,3,1998-02-26 00:00:00,1998-03-26 00:00:00,1998-03-05 00:00:00,1,38,19,Godos Cocina Típica,C/ Romero, 33,Sevilla,,41101,Spain
+10904,WHITC,3,1998-02-24 00:00:00,1998-03-24 00:00:00,1998-02-27 00:00:00,3,162,95,White Clover Markets,1029 - 12th Ave. S.,Seattle,WA,98124,USA
+10903,HANAR,3,1998-02-24 00:00:00,1998-03-24 00:00:00,1998-03-04 00:00:00,3,36,71,Hanari Carnes,Rua do Paço, 67,Rio de Janeiro,RJ,05454-876,Brazil
+10960,HILAA,3,1998-03-19 00:00:00,1998-04-02 00:00:00,1998-04-08 00:00:00,1,2,08,HILARION-Abastos,Carrera 22 con Ave. Carlos Soublette #8-35,San Cristóbal,Táchira,5022,Venezuela
+10897,HUNGO,3,1998-02-19 00:00:00,1998-03-19 00:00:00,1998-02-25 00:00:00,2,603,54,Hungry Owl All-Night Grocers,8 Johnstown Road,Cork,Co. Cork,,Ireland
+10895,ERNSH,3,1998-02-18 00:00:00,1998-03-18 00:00:00,1998-02-23 00:00:00,1,162,75,Ernst Handel,Kirchgasse 6,Graz,,8010,Austria
+10948,GODOS,3,1998-03-13 00:00:00,1998-04-10 00:00:00,1998-03-19 00:00:00,3,23,39,Godos Cocina Típica,C/ Romero, 33,Sevilla,,41101,Spain
+10681,GREAL,3,1997-09-25 00:00:00,1997-10-23 00:00:00,1997-09-30 00:00:00,3,76,13,Great Lakes Food Market,2732 Baker Blvd.,Eugene,OR,97403,USA
+10796,HILAA,3,1997-12-25 00:00:00,1998-01-22 00:00:00,1998-01-14 00:00:00,1,26,52,HILARION-Abastos,Carrera 22 con Ave. Carlos Soublette #8-35,San Cristóbal,Táchira,5022,Venezuela
+10779,MORGK,3,1997-12-16 00:00:00,1998-01-13 00:00:00,1998-01-14 00:00:00,2,58,13,Morgenstern Gesundkost,Heerstr. 22,Leipzig,,04179,Germany
+10732,BONAP,3,1997-11-06 00:00:00,1997-12-04 00:00:00,1997-11-07 00:00:00,1,16,97,Bon app',12, rue des Bouchers,Marseille,,13008,France
+10723,WHITC,3,1997-10-30 00:00:00,1997-11-27 00:00:00,1997-11-25 00:00:00,1,21,72,White Clover Markets,1029 - 12th Ave. S.,Seattle,WA,98124,USA
+11006,GREAL,3,1998-04-07 00:00:00,1998-05-05 00:00:00,1998-04-15 00:00:00,2,25,19,Great Lakes Food Market,2732 Baker Blvd.,Eugene,OR,97403,USA
+10715,BONAP,3,1997-10-23 00:00:00,1997-11-06 00:00:00,1997-10-29 00:00:00,1,63,2,Bon app',12, rue des Bouchers,Marseille,,13008,France
+10712,HUNGO,3,1997-10-21 00:00:00,1997-11-18 00:00:00,1997-10-31 00:00:00,1,89,93,Hungry Owl All-Night Grocers,8 Johnstown Road,Cork,Co. Cork,,Ireland
+11011,ALFKI,3,1998-04-09 00:00:00,1998-05-07 00:00:00,1998-04-13 00:00:00,1,1,21,Alfred's Futterkiste,Obere Str. 57,Berlin,,12209,Germany
+10700,SAVEA,3,1997-10-10 00:00:00,1997-11-07 00:00:00,1997-10-16 00:00:00,1,65,1,Save-a-lot Markets,187 Suffolk Ln.,Boise,ID,83720,USA
+10699,MORGK,3,1997-10-09 00:00:00,1997-11-06 00:00:00,1997-10-13 00:00:00,3,0,58,Morgenstern Gesundkost,Heerstr. 22,Leipzig,,04179,Germany
+10697,LINOD,3,1997-10-08 00:00:00,1997-11-05 00:00:00,1997-10-14 00:00:00,1,45,52,LINO-Delicateses,Ave. 5 de Mayo Porlamar,I. de Margarita,Nueva Esparta,4980,Venezuela
+10693,WHITC,3,1997-10-06 00:00:00,1997-10-20 00:00:00,1997-10-10 00:00:00,3,139,34,White Clover Markets,1029 - 12th Ave. S.,Seattle,WA,98124,USA
+10684,OTTIK,3,1997-09-26 00:00:00,1997-10-24 00:00:00,1997-09-30 00:00:00,1,145,63,Ottilies Käseladen,Mehrheimerstr. 369,Köln,,50739,Germany
+11004,MAISD,3,1998-04-07 00:00:00,1998-05-05 00:00:00,1998-04-20 00:00:00,1,44,84,Maison Dewey,Rue Joseph-Bens 532,Bruxelles,,B-1180,Belgium
+11003,THECR,3,1998-04-06 00:00:00,1998-05-04 00:00:00,1998-04-08 00:00:00,3,14,91,The Cracker Box,55 Grizzly Peak Rd.,Butte,MT,59801,USA
+10739,VINET,3,1997-11-12 00:00:00,1997-12-10 00:00:00,1997-11-17 00:00:00,3,11,08,Vins et alcools Chevalier,59 rue de l'Abbaye,Reims,,51100,France
+10742,BOTTM,3,1997-11-14 00:00:00,1997-12-12 00:00:00,1997-11-18 00:00:00,3,243,73,Bottom-Dollar Markets,23 Tsawassen Blvd.,Tsawassen,BC,T2F 8M4,Canada
+10778,BERGS,3,1997-12-16 00:00:00,1998-01-13 00:00:00,1997-12-24 00:00:00,1,6,79,Berglunds snabbköp,Berguvsvägen  8,Luleå,,S-958 22,Sweden
+10772,LEHMS,3,1997-12-10 00:00:00,1998-01-07 00:00:00,1997-12-19 00:00:00,2,91,28,Lehmanns Marktstand,Magazinweg 7,Frankfurt a.M.,,60528,Germany
+10769,VAFFE,3,1997-12-08 00:00:00,1998-01-05 00:00:00,1997-12-12 00:00:00,1,65,06,Vaffeljernet,Smagsloget 45,Århus,,8200,Denmark
+10768,AROUT,3,1997-12-08 00:00:00,1998-01-05 00:00:00,1997-12-15 00:00:00,2,146,32,Around the Horn,Brook Farm Stratford St. Mary,Colchester,Essex,CO7 6JX,UK
+10765,QUICK,3,1997-12-04 00:00:00,1998-01-01 00:00:00,1997-12-09 00:00:00,3,42,74,QUICK-Stop,Taucherstraße 10,Cunewalde,,01307,Germany
+10793,AROUT,3,1997-12-24 00:00:00,1998-01-21 00:00:00,1998-01-08 00:00:00,3,4,52,Around the Horn,Brook Farm Stratford St. Mary,Colchester,Essex,CO7 6JX,UK
+10763,FOLIG,3,1997-12-03 00:00:00,1997-12-31 00:00:00,1997-12-08 00:00:00,3,37,35,Folies gourmandes,184, chaussée de Tournai,Lille,,59000,France
+10759,ANATR,3,1997-11-28 00:00:00,1997-12-26 00:00:00,1997-12-12 00:00:00,3,11,99,Ana Trujillo Emparedados y helados,Avda. de la Constitución 2222,México D.F.,,05021,Mexico
+10758,RICSU,3,1997-11-28 00:00:00,1997-12-26 00:00:00,1997-12-04 00:00:00,3,138,17,Richter Supermarkt,Starenweg 5,Genève,,1204,Switzerland
+10936,GREAL,3,1998-03-09 00:00:00,1998-04-06 00:00:00,1998-03-18 00:00:00,2,33,68,Great Lakes Food Market,2732 Baker Blvd.,Eugene,OR,97403,USA
+10751,RICSU,3,1997-11-24 00:00:00,1997-12-22 00:00:00,1997-12-03 00:00:00,3,130,79,Richter Supermarkt,Starenweg 5,Genève,,1204,Switzerland
+10748,SAVEA,3,1997-11-20 00:00:00,1997-12-18 00:00:00,1997-11-28 00:00:00,1,232,55,Save-a-lot Markets,187 Suffolk Ln.,Boise,ID,83720,USA
+10762,FOLKO,3,1997-12-02 00:00:00,1997-12-30 00:00:00,1997-12-09 00:00:00,1,328,74,Folk och fä HB,Åkergatan 24,Bräcke,,S-844 67,Sweden
+10934,LEHMS,3,1998-03-09 00:00:00,1998-04-06 00:00:00,1998-03-12 00:00:00,3,32,01,Lehmanns Marktstand,Magazinweg 7,Frankfurt a.M.,,60528,Germany
+10662,LONEP,3,1997-09-09 00:00:00,1997-10-07 00:00:00,1997-09-18 00:00:00,2,1,28,Lonesome Pine Restaurant,89 Chiaroscuro Rd.,Portland,OR,97219,USA
+10433,PRINI,3,1997-02-03 00:00:00,1997-03-03 00:00:00,1997-03-04 00:00:00,3,73,83,Princesa Isabel Vinhos,Estrada da saúde n. 58,Lisboa,,1756,Portugal
+10391,DRACD,3,1996-12-23 00:00:00,1997-01-20 00:00:00,1996-12-31 00:00:00,3,5,45,Drachenblut Delikatessen,Walserweg 21,Aachen,,52066,Germany
+10432,SPLIR,3,1997-01-31 00:00:00,1997-02-14 00:00:00,1997-02-07 00:00:00,2,4,34,Split Rail Beer & Ale,P.O. Box 555,Lander,WY,82520,USA
+10309,HUNGO,3,1996-09-19 00:00:00,1996-10-17 00:00:00,1996-10-23 00:00:00,1,47,3,Hungry Owl All-Night Grocers,8 Johnstown Road,Cork,Co. Cork,,Ireland
+10409,OCEAN,3,1997-01-09 00:00:00,1997-02-06 00:00:00,1997-01-14 00:00:00,1,29,83,Océano Atlántico Ltda.,Ing. Gustavo Moncada 8585 Piso 20-A,Buenos Aires,,1010,Argentina
+10517,NORTS,3,1997-04-24 00:00:00,1997-05-22 00:00:00,1997-04-29 00:00:00,3,32,07,North/South,South House 300 Queensbridge,London,,SW7 1RZ,UK
+10410,BOTTM,3,1997-01-10 00:00:00,1997-02-07 00:00:00,1997-01-15 00:00:00,3,2,4,Bottom-Dollar Markets,23 Tsawassen Blvd.,Tsawassen,BC,T2F 8M4,Canada
+10547,SEVES,3,1997-05-23 00:00:00,1997-06-20 00:00:00,1997-06-02 00:00:00,2,178,43,Seven Seas Imports,90 Wadhurst Rd.,London,,OX15 4NB,UK
+10413,LAMAI,3,1997-01-14 00:00:00,1997-02-11 00:00:00,1997-01-16 00:00:00,2,95,66,La maison d'Asie,1 rue Alsace-Lorraine,Toulouse,,31000,France
+10415,HUNGC,3,1997-01-15 00:00:00,1997-02-12 00:00:00,1997-01-24 00:00:00,1,0,2,Hungry Coyote Import Store,City Center Plaza 516 Main St.,Elgin,OR,97827,USA
+10449,BLONP,3,1997-02-18 00:00:00,1997-03-18 00:00:00,1997-02-27 00:00:00,2,53,3,Blondel père et fils,24, place Kléber,Strasbourg,,67000,France
+10283,LILAS,3,1996-08-16 00:00:00,1996-09-13 00:00:00,1996-08-23 00:00:00,3,84,81,LILA-Supermercado,Carrera 52 con Ave. Bolívar #65-98 Llano Largo,Barquisimeto,Lara,3508,Venezuela
+10321,ISLAT,3,1996-10-03 00:00:00,1996-10-31 00:00:00,1996-10-11 00:00:00,2,3,43,Island Trading,Garden House Crowther Way,Cowes,Isle of Wight,PO31 7PJ,UK
+10384,BERGS,3,1996-12-16 00:00:00,1997-01-13 00:00:00,1996-12-20 00:00:00,3,168,64,Berglunds snabbköp,Berguvsvägen  8,Luleå,,S-958 22,Sweden
+10381,LILAS,3,1996-12-12 00:00:00,1997-01-09 00:00:00,1996-12-13 00:00:00,3,7,99,LILA-Supermercado,Carrera 52 con Ave. Bolívar #65-98 Llano Largo,Barquisimeto,Lara,3508,Venezuela
+10375,HUNGC,3,1996-12-06 00:00:00,1997-01-03 00:00:00,1996-12-09 00:00:00,2,20,12,Hungry Coyote Import Store,City Center Plaza 516 Main St.,Elgin,OR,97827,USA
+10352,FURIB,3,1996-11-12 00:00:00,1996-11-26 00:00:00,1996-11-18 00:00:00,3,1,3,Furia Bacalhau e Frutos do Mar,Jardim das rosas n. 32,Lisboa,,1675,Portugal
+10495,LAUGB,3,1997-04-03 00:00:00,1997-05-01 00:00:00,1997-04-11 00:00:00,3,4,65,Laughing Bacchus Wine Cellars,2319 Elm St.,Vancouver,BC,V3F 2K1,Canada
+10492,BOTTM,3,1997-04-01 00:00:00,1997-04-29 00:00:00,1997-04-11 00:00:00,1,62,89,Bottom-Dollar Markets,23 Tsawassen Blvd.,Tsawassen,BC,T2F 8M4,Canada
+10346,RATTC,3,1996-11-05 00:00:00,1996-12-17 00:00:00,1996-11-08 00:00:00,3,142,08,Rattlesnake Canyon Grocery,2817 Milton Dr.,Albuquerque,NM,87110,USA
+10362,BONAP,3,1996-11-25 00:00:00,1996-12-23 00:00:00,1996-11-28 00:00:00,1,96,04,Bon app',12, rue des Bouchers,Marseille,,13008,France
+10273,QUICK,3,1996-08-05 00:00:00,1996-09-02 00:00:00,1996-08-12 00:00:00,3,76,07,QUICK-Stop,Taucherstraße 10,Cunewalde,,01307,Germany
+10365,ANTON,3,1996-11-27 00:00:00,1996-12-25 00:00:00,1996-12-02 00:00:00,2,22,Antonio Moreno Taquería,Mataderos  2312,México D.F.,,05023,Mexico
+10479,RATTC,3,1997-03-19 00:00:00,1997-04-16 00:00:00,1997-03-21 00:00:00,3,708,95,Rattlesnake Canyon Grocery,2817 Milton Dr.,Albuquerque,NM,87110,USA
+10468,KOENE,3,1997-03-07 00:00:00,1997-04-04 00:00:00,1997-03-12 00:00:00,3,44,12,Königlich Essen,Maubelstr. 90,Brandenburg,,14776,Germany
+10332,MEREP,3,1996-10-17 00:00:00,1996-11-28 00:00:00,1996-10-21 00:00:00,2,52,84,Mère Paillarde,43 rue St. Laurent,Montréal,Québec,H1J 1C3,Canada
+10505,MEREP,3,1997-04-14 00:00:00,1997-05-12 00:00:00,1997-04-21 00:00:00,3,7,13,Mère Paillarde,43 rue St. Laurent,Montréal,Québec,H1J 1C3,Canada
+10330,LILAS,3,1996-10-16 00:00:00,1996-11-13 00:00:00,1996-10-28 00:00:00,1,12,75,LILA-Supermercado,Carrera 52 con Ave. Bolívar #65-98 Llano Largo,Barquisimeto,Lara,3508,Venezuela
+10484,BSBEV,3,1997-03-24 00:00:00,1997-04-21 00:00:00,1997-04-01 00:00:00,3,6,88,B's Beverages,Fauntleroy Circus,London,,EC2 5NT,UK
+10445,BERGS,3,1997-02-13 00:00:00,1997-03-13 00:00:00,1997-02-20 00:00:00,1,9,3,Berglunds snabbköp,Berguvsvägen  8,Luleå,,S-958 22,Sweden
+10514,ERNSH,3,1997-04-22 00:00:00,1997-05-20 00:00:00,1997-05-16 00:00:00,2,789,95,Ernst Handel,Kirchgasse 6,Graz,,8010,Austria
+10536,LEHMS,3,1997-05-14 00:00:00,1997-06-11 00:00:00,1997-06-06 00:00:00,2,58,88,Lehmanns Marktstand,Magazinweg 7,Frankfurt a.M.,,60528,Germany
+10444,BERGS,3,1997-02-12 00:00:00,1997-03-12 00:00:00,1997-02-21 00:00:00,3,3,5,Berglunds snabbköp,Berguvsvägen  8,Luleå,,S-958 22,Sweden
+10429,HUNGO,3,1997-01-29 00:00:00,1997-03-12 00:00:00,1997-02-07 00:00:00,2,56,63,Hungry Owl All-Night Grocers,8 Johnstown Road,Cork,Co. Cork,,Ireland
+10253,HANAR,3,1996-07-10 00:00:00,1996-07-24 00:00:00,1996-07-16 00:00:00,2,58,17,Hanari Carnes,Rua do Paço, 67,Rio de Janeiro,RJ,05454-876,Brazil
+10540,QUICK,3,1997-05-19 00:00:00,1997-06-16 00:00:00,1997-06-13 00:00:00,3,1007,64,QUICK-Stop,Taucherstraße 10,Cunewalde,,01307,Germany
+10256,WELLI,3,1996-07-15 00:00:00,1996-08-12 00:00:00,1996-07-17 00:00:00,2,13,97,Wellington Importadora,Rua do Mercado, 12,Resende,SP,08737-363,Brazil
+10420,WELLI,3,1997-01-21 00:00:00,1997-02-18 00:00:00,1997-01-27 00:00:00,1,44,12,Wellington Importadora,Rua do Mercado, 12,Resende,SP,08737-363,Brazil
+10441,OLDWO,3,1997-02-10 00:00:00,1997-03-24 00:00:00,1997-03-14 00:00:00,2,73,02,Old World Delicatessen,2743 Bering St.,Anchorage,AK,99508,USA
+10266,WARTH,3,1996-07-26 00:00:00,1996-09-06 00:00:00,1996-07-31 00:00:00,3,25,73,Wartian Herkku,Torikatu 38,Oulu,,90110,Finland
+10251,VICTE,3,1996-07-08 00:00:00,1996-08-05 00:00:00,1996-07-15 00:00:00,1,41,34,Victuailles en stock,2, rue du Commerce,Lyon,,69004,France
+10442,ERNSH,3,1997-02-11 00:00:00,1997-03-11 00:00:00,1997-02-18 00:00:00,2,47,94,Ernst Handel,Kirchgasse 6,Graz,,8010,Austria
+10436,BLONP,3,1997-02-05 00:00:00,1997-03-05 00:00:00,1997-02-11 00:00:00,2,156,66,Blondel père et fils,24, place Kléber,Strasbourg,,67000,France
+10438,TOMSP,3,1997-02-06 00:00:00,1997-03-06 00:00:00,1997-02-14 00:00:00,2,8,24,Toms Spezialitäten,Luisenstr. 48,Münster,,44087,Germany
+10434,FOLKO,3,1997-02-03 00:00:00,1997-03-03 00:00:00,1997-02-13 00:00:00,2,17,92,Folk och fä HB,Åkergatan 24,Bräcke,,S-844 67,Sweden
+10530,PICCO,3,1997-05-08 00:00:00,1997-06-05 00:00:00,1997-05-12 00:00:00,2,339,22,Piccolo und mehr,Geislweg 14,Salzburg,,5020,Austria

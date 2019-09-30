@@ -1,0 +1,2281 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/27/2019 6:27:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-Q02Q4RT"
+  DTS:CreatorName="DESKTOP-Q02Q4RT\david"
+  DTS:DTSID="{06A38982-585F-411E-8860-144A2A2F780E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{5D61D2F6-B921-4059-AA33-CA7723B83B3F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9A5AE4E4-20A1-4F2B-A482-3D0CEC21700B}"
+      DTS:ObjectName="Administrador de conexiones de archivos planos">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\david\Documents\6to\Inteligencia de Negocios\S7\PEDIDOS1.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderID"
+              DTS:DTSID="{225C4033-1E47-48E3-93FA-EBCD66EE2D2C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerID"
+              DTS:DTSID="{9AB966BA-4698-408A-BB00-746F9E449F53}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeID"
+              DTS:DTSID="{3EF31233-2BA4-40B7-9F0A-6F932E13F5B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDate"
+              DTS:DTSID="{6A21BC82-2506-4DF5-B764-238CDFA4CF8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RequiredDate"
+              DTS:DTSID="{ACE5837B-8A4E-464E-A844-FE4632CF723F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShippedDate"
+              DTS:DTSID="{1C762C35-D844-420E-9EBB-B0A8F5D697C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipVia"
+              DTS:DTSID="{C15398C6-E9B0-426A-9DA3-93D0AF389CCF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Freight"
+              DTS:DTSID="{A14750B2-4664-40AF-9B6A-CF977F660135}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipName"
+              DTS:DTSID="{178A79F1-6EF3-4173-86D1-75F38A36BA9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="60"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipAddress"
+              DTS:DTSID="{9B5F6A41-A165-4D33-BA20-1F16B82F2E6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipCity"
+              DTS:DTSID="{102A397A-4DC8-4D38-A71F-9CD65153D103}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipRegion"
+              DTS:DTSID="{B3F23F72-FE98-4CB7-ADBA-C15C06E6131B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipPostalCode"
+              DTS:DTSID="{953BEF2F-FC18-4F52-9D58-F3149750245D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipCountry"
+              DTS:DTSID="{EB4506D8-F2DF-417D-A742-3DCD77E69234}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones de archivos planos 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7A1DD3E2-AE7C-4BD3-9384-0AFF981E119B}"
+      DTS:ObjectName="Administrador de conexiones de archivos planos 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\david\Documents\6to\Inteligencia de Negocios\S7\PEDIDO2.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderID"
+              DTS:DTSID="{B303E379-B59D-4627-8FE8-83DD2BCB698A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerID"
+              DTS:DTSID="{C5B8DCC5-684A-4982-B8A0-172F273A19D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeID"
+              DTS:DTSID="{81CCB0B9-D7E4-46E9-A054-FDB214B1D77D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDate"
+              DTS:DTSID="{EE9F7A94-CF54-45C5-A87C-DF6DF3DEBD72}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RequiredDate"
+              DTS:DTSID="{2C23CA1C-2A6C-43D0-B8FA-85BD90079ADE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShippedDate"
+              DTS:DTSID="{08D8F9A0-7E37-4E7D-820A-467190EC92AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipVia"
+              DTS:DTSID="{E28030C7-5CD5-4BC0-B33B-F8D6ABF675F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Freight"
+              DTS:DTSID="{7A07D1D7-17C9-420F-A631-FD65C9E96598}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipName"
+              DTS:DTSID="{B173A555-CE14-4E0C-B9FE-A2EEE96C7575}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="60"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipAddress"
+              DTS:DTSID="{F11F047C-DE04-416B-8B43-4D98D4D3E12B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipCity"
+              DTS:DTSID="{DECDCD39-1578-4FCF-A123-19AC2553A854}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipRegion"
+              DTS:DTSID="{2168B1E7-265A-464B-9FB1-279510519012}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipPostalCode"
+              DTS:DTSID="{58B58F17-1022-4E21-B609-2BE2370B7EA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipCountry"
+              DTS:DTSID="{DF6254F5-34AA-430E-A06F-5A3D4704E344}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones de archivos planos 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CDA543DE-89DE-4FA0-BFFF-702FF3AFAC54}"
+      DTS:ObjectName="Administrador de conexiones de archivos planos 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\david\Documents\6to\Inteligencia de Negocios\S7\PEDIDO3.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderID"
+              DTS:DTSID="{3C5A8141-4079-4DEB-B45A-5F3E35AB76F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CustomerID"
+              DTS:DTSID="{11FB6098-4162-4104-9F25-D8A49534805A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeID"
+              DTS:DTSID="{4026FE81-E1C2-48BA-91A7-C2C9AFF19E3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrderDate"
+              DTS:DTSID="{C309655B-52ED-426B-820E-A660370F9266}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RequiredDate"
+              DTS:DTSID="{C8F37664-CA5F-444B-ABA1-4FAEFB82A7EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShippedDate"
+              DTS:DTSID="{1AF5E3F7-88AD-467D-8837-3E53DA2694B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipVia"
+              DTS:DTSID="{34AA08E3-87E0-4171-8218-19ADCE988A91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Freight"
+              DTS:DTSID="{15B8731F-4850-4D0E-901A-4032B7A931E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipName"
+              DTS:DTSID="{A03CFA71-63BC-49E8-8D9E-5D3FA7DF8700}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="60"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipAddress"
+              DTS:DTSID="{B933DAF8-373A-41E3-B486-AAE1DD480833}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipCity"
+              DTS:DTSID="{F8288D4D-D7E8-4738-9652-E491EE815BC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipRegion"
+              DTS:DTSID="{BAC5AB5E-4B8F-4B84-BEFC-B8B1A633D578}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipPostalCode"
+              DTS:DTSID="{45771B45-5820-4751-B25C-F5C8F60BBA92}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ShipCountry"
+              DTS:DTSID="{E0031576-0CC5-4A8A-8A1F-4E12779A0A3A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LOCALHOST.NORTHWIND]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6E1A28DB-B630-4C57-A9A6-C352BFFB70EB}"
+      DTS:ObjectName="LOCALHOST.NORTHWIND">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LOCALHOST;Initial Catalog=NORTHWIND;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\EJEMPLO ETL"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{925C2CD1-B875-429D-8D58-02749F24DA09}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EJEMPLO ETL"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="FILTRO DE PEDIDOS"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Inputs[Entrada de división condicional].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[FILTRO 1]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="FILTRO 1"
+                  synchronousInputId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]} == 1</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">EmployeeID == 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[FILTRO 2]"
+                  description="Salida 2 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="FILTRO 2"
+                  synchronousInputId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]} == 2</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">EmployeeID == 2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[FILTRO 3]"
+                  description="Salida 3 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="FILTRO 3"
+                  synchronousInputId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]} == 3</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">EmployeeID == 3</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[Salida predeterminada de división condicional]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="Salida predeterminada de división condicional"
+                  synchronousInputId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="ORDENAR PEDIDOS"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[OrderID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[OrderDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[RequiredDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RequiredDate"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[RequiredDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[ShippedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ShippedDate"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShippedDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[ShipVia]"
+                      cachedDataType="i4"
+                      cachedName="ShipVia"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipVia]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[Freight]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[ShipName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ShipName"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[ShipAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="ShipAddress"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipAddress]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[ShipCity]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCity"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipCity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[ShipRegion]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipRegion"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipRegion]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[ShipPostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ShipPostalCode"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipPostalCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación].Columns[ShipCountry]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCountry"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipCountry]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderID]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderID]"
+                      name="OrderID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[OrderID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[CustomerID]"
+                      name="CustomerID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[CustomerID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderDate]"
+                      name="OrderDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[OrderDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[RequiredDate]"
+                      name="RequiredDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[RequiredDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShippedDate]"
+                      name="ShippedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShippedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipVia]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipVia]"
+                      name="ShipVia">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipVia]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[Freight]"
+                      name="Freight">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[Freight]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipName]"
+                      name="ShipName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipAddress]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipAddress]"
+                      name="ShipAddress">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipAddress]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCity]"
+                      name="ShipCity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipCity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipRegion]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipRegion]"
+                      name="ShipRegion">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipRegion]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipPostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipPostalCode]"
+                      name="ShipPostalCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipPostalCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCountry]"
+                      name="ShipCountry">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipCountry]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\EJEMPLO ETL\PEDIDO 1"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="PEDIDO 1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\EJEMPLO ETL\PEDIDO 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[CustomerID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[EmployeeID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[RequiredDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RequiredDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[RequiredDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[RequiredDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[ShippedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ShippedDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShippedDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShippedDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[ShipVia]"
+                      cachedDataType="i4"
+                      cachedName="ShipVia"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipVia]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipVia]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[Freight]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[Freight]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[ShipName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ShipName"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipName]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipName]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[ShipAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="ShipAddress"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipAddress]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipAddress]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[ShipCity]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCity"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCity]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCity]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[ShipRegion]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipRegion"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipRegion]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipRegion]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[ShipPostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ShipPostalCode"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipPostalCode]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipPostalCode]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].Columns[ShipCountry]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCountry"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCountry]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCountry]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipVia]"
+                      dataType="i4"
+                      name="ShipVia" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ShipName" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipAddress]"
+                      dataType="wstr"
+                      length="60"
+                      name="ShipAddress" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCity" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipRegion]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipRegion" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipPostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="ShipPostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCountry" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\EJEMPLO ETL\PEDIDO 2"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="PEDIDO 2">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\EJEMPLO ETL\PEDIDO 2.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones de archivos planos 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones de archivos planos 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[CustomerID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[EmployeeID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[RequiredDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RequiredDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[RequiredDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[RequiredDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[ShippedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ShippedDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShippedDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShippedDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[ShipVia]"
+                      cachedDataType="i4"
+                      cachedName="ShipVia"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipVia]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipVia]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[Freight]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[Freight]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[ShipName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ShipName"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipName]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipName]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[ShipAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="ShipAddress"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipAddress]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipAddress]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[ShipCity]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCity"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCity]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCity]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[ShipRegion]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipRegion"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipRegion]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipRegion]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[ShipPostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ShipPostalCode"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipPostalCode]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipPostalCode]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].Columns[ShipCountry]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCountry"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCountry]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCountry]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipVia]"
+                      dataType="i4"
+                      name="ShipVia" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ShipName" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipAddress]"
+                      dataType="wstr"
+                      length="60"
+                      name="ShipAddress" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCity" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipRegion]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipRegion" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipPostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="ShipPostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCountry" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\EJEMPLO ETL\PEDIDO 3"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Destino de archivo plano"
+              localeId="3082"
+              name="PEDIDO 3">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\EJEMPLO ETL\PEDIDO 3.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones de archivos planos 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones de archivos planos 2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano]"
+                  hasSideEffects="true"
+                  name="Entrada de destino de archivo plano">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[CustomerID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[EmployeeID]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[RequiredDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RequiredDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[RequiredDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[RequiredDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[ShippedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ShippedDate"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShippedDate]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShippedDate]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[ShipVia]"
+                      cachedDataType="i4"
+                      cachedName="ShipVia"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipVia]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipVia]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[Freight]"
+                      cachedDataType="cy"
+                      cachedName="Freight"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[Freight]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[Freight]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[ShipName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ShipName"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipName]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipName]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[ShipAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="60"
+                      cachedName="ShipAddress"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipAddress]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipAddress]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[ShipCity]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCity"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCity]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCity]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[ShipRegion]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipRegion"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipRegion]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipRegion]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[ShipPostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="ShipPostalCode"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipPostalCode]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipPostalCode]" />
+                    <inputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].Columns[ShipCountry]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ShipCountry"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCountry]"
+                      lineageId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación].Columns[ShipCountry]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipVia]"
+                      dataType="i4"
+                      name="ShipVia" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ShipName" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipAddress]"
+                      dataType="wstr"
+                      length="60"
+                      name="ShipAddress" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCity" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipRegion]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipRegion" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipPostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="ShipPostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano].ExternalColumns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCountry" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\EJEMPLO ETL\PEDIDOS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="PEDIDOS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Orders]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\EJEMPLO ETL\PEDIDOS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LOCALHOST.NORTHWIND]"
+                  connectionManagerRefId="Package.ConnectionManagers[LOCALHOST.NORTHWIND]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[OrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderID]"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
+                      length="5"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[EmployeeID]"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderDate]"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[RequiredDate]"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[RequiredDate]"
+                      name="RequiredDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShippedDate]"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShippedDate]"
+                      name="ShippedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipVia]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipVia]"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipVia]"
+                      name="ShipVia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[Freight]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[Freight]"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[Freight]"
+                      name="Freight"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipName]"
+                      length="40"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipName]"
+                      name="ShipName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipAddress]"
+                      length="60"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipAddress]"
+                      name="ShipAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipCity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipCity]"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipCity]"
+                      name="ShipCity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipRegion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipRegion]"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipRegion]"
+                      name="ShipRegion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipPostalCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipPostalCode]"
+                      length="10"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipPostalCode]"
+                      name="ShipPostalCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipCountry]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipCountry]"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].Columns[ShipCountry]"
+                      name="ShipCountry"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      name="ShippedDate" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipVia]"
+                      dataType="i4"
+                      name="ShipVia" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[Freight]"
+                      dataType="cy"
+                      name="Freight" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ShipName" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipAddress]"
+                      dataType="wstr"
+                      length="60"
+                      name="ShipAddress" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCity" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipRegion]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipRegion" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipPostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      name="ShipPostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB].ExternalColumns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      name="ShipCountry" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[OrderID]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[OrderID]"
+                      name="OrderID" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[EmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[OrderDate]"
+                      name="OrderDate" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[RequiredDate]"
+                      name="RequiredDate" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShippedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShippedDate]"
+                      name="ShippedDate" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipVia]"
+                      dataType="i4"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipVia]"
+                      name="ShipVia" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[Freight]"
+                      dataType="cy"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[Freight]"
+                      name="Freight" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipName]"
+                      name="ShipName" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipAddress]"
+                      dataType="wstr"
+                      length="60"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipAddress]"
+                      name="ShipAddress" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipCity]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipCity]"
+                      name="ShipCity" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipRegion]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipRegion]"
+                      name="ShipRegion" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipPostalCode]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipPostalCode]"
+                      name="ShipPostalCode" />
+                    <outputColumn
+                      refId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipCountry]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de error de origen de OLE DB].Columns[ShipCountry]"
+                      name="ShipCountry" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\EJEMPLO ETL.Paths[FILTRO 1]"
+              endId="Package\EJEMPLO ETL\PEDIDO 1.Inputs[Entrada de destino de archivo plano]"
+              name="FILTRO 1"
+              startId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[FILTRO 1]" />
+            <path
+              refId="Package\EJEMPLO ETL.Paths[FILTRO 2]"
+              endId="Package\EJEMPLO ETL\PEDIDO 2.Inputs[Entrada de destino de archivo plano]"
+              name="FILTRO 2"
+              startId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[FILTRO 2]" />
+            <path
+              refId="Package\EJEMPLO ETL.Paths[FILTRO 3]"
+              endId="Package\EJEMPLO ETL\PEDIDO 3.Inputs[Entrada de destino de archivo plano]"
+              name="FILTRO 3"
+              startId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Outputs[FILTRO 3]" />
+            <path
+              refId="Package\EJEMPLO ETL.Paths[Salida de ordenación]"
+              endId="Package\EJEMPLO ETL\FILTRO DE PEDIDOS.Inputs[Entrada de división condicional]"
+              name="Salida de ordenación"
+              startId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\EJEMPLO ETL.Paths[Salida de origen de OLE DB]"
+              endId="Package\EJEMPLO ETL\ORDENAR PEDIDOS.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\EJEMPLO ETL\PEDIDOS.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="143,42"
+          Id="Package\EJEMPLO ETL"
+          TopLeft="278,96" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\EJEMPLO ETL">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\EJEMPLO ETL\PEDIDOS"
+          TopLeft="309,86" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\EJEMPLO ETL\ORDENAR PEDIDOS"
+          TopLeft="283,166" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\EJEMPLO ETL\FILTRO DE PEDIDOS"
+          TopLeft="255,247" />
+        <EdgeLayout
+          Id="Package\EJEMPLO ETL.Paths[Salida de origen de OLE DB]"
+          TopLeft="370.25,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\EJEMPLO ETL.Paths[Salida de ordenación]"
+          TopLeft="370,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26,39"
+              Start="0,0"
+              End="-26,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="-4,19.5" />
+                  <mssgle:LineSegment
+                    End="-22,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22,19.5"
+                    Point2="-26,19.5"
+                    Point3="-26,23.5" />
+                  <mssgle:LineSegment
+                    End="-26,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="126,42"
+          Id="Package\EJEMPLO ETL\PEDIDO 1"
+          TopLeft="114,335" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\EJEMPLO ETL\PEDIDO 2"
+          TopLeft="338,338" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\EJEMPLO ETL\PEDIDO 3"
+          TopLeft="601,339" />
+        <EdgeLayout
+          Id="Package\EJEMPLO ETL.Paths[FILTRO 1]"
+          TopLeft="344,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-167,46"
+              Start="0,0"
+              End="-167,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="-4,23" />
+                  <mssgle:LineSegment
+                    End="-163,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-163,23"
+                    Point2="-167,23"
+                    Point3="-167,27" />
+                  <mssgle:LineSegment
+                    End="-167,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.54556640625,28,42.0911328125,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\EJEMPLO ETL.Paths[FILTRO 2]"
+          TopLeft="372.333333333333,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.6666666666667,49"
+              Start="0,0"
+              End="28.6666666666667,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.8619153674833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.8619153674833"
+                    Point2="0,19.8619153674833"
+                    Point3="4,19.8619153674833" />
+                  <mssgle:LineSegment
+                    End="24.6666666666667,19.8619153674833" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.6666666666667,19.8619153674833"
+                    Point2="28.6666666666667,19.8619153674833"
+                    Point3="28.6666666666667,23.8619153674833" />
+                  <mssgle:LineSegment
+                    End="28.6666666666667,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-6.89777994791666,24.8619153674833,42.4622265625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\EJEMPLO ETL.Paths[FILTRO 3]"
+          TopLeft="386.5,289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="277.5,50"
+              Start="0,0"
+              End="277.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.1586715867159" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.1586715867159"
+                    Point2="0,17.1586715867159"
+                    Point3="4,17.1586715867159" />
+                  <mssgle:LineSegment
+                    End="273.5,17.1586715867159" />
+                  <mssgle:CubicBezierSegment
+                    Point1="273.5,17.1586715867159"
+                    Point2="277.5,17.1586715867159"
+                    Point3="277.5,21.1586715867159" />
+                  <mssgle:LineSegment
+                    End="277.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="117.58236328125,22.1586715867159,42.3352734375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\EJEMPLO ETL\PEDIDOS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

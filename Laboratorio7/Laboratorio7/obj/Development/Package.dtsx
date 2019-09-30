@@ -1,0 +1,2894 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/29/2019 2:48:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-Q02Q4RT"
+  DTS:CreatorName="DESKTOP-Q02Q4RT\david"
+  DTS:DTSID="{CFEBAC30-2B6B-4261-B9B0-D64CED0F00D6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{CEB69A59-7E1C-4342-9D65-47CA283699E6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E05805BE-86B9-4479-B7ED-8EA5FFB96A70}"
+      DTS:ObjectName="localhost.dw_invBodega.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=dw_invBodega;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS0CQxGWGA0KzLcvznFdgKAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAVOM+aSrBfUv6gos+BCkxM+cflvxtPVoETM03RBsxqnQAAAAAOgAAAAAIAACAAAAD1uYALwBvhipuoomhLk+iPzT9uFUV62p10uiDeM1O1ShAAAABpEY7nUtR+e0nLMfsF/4L4QAAAAPrkaVRqK6YxlMLvNcPxLy4EInccKbW4UF7a52AsnfGoO6dLjx+Rhq9HgshpBcMf4AjMkPhdibI/q9ydAgtTN3U</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.invBodega.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0DA66995-D0B9-4DAF-809C-4281DFC3E6D2}"
+      DTS:ObjectName="localhost.invBodega.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=invBodega;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAS0CQxGWGA0KzLcvznFdgKAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD8oCjR858MJFQFI0sJyGwWdqjFbrAkZgwibGO3zdT8WQAAAAAOgAAAAAIAACAAAAAqC4N2h4hAx5DCz3Xg8vloT+AGARsivrEraJa0NhlNkBAAAAD0XIJMyiWoZR9uf8ClAYtRQAAAAF+REBXrgZhAKJXmWmVHJJWKdFF10hMFAiLtcGm9zcTKh9JYvNsMnCx7Tj16wNBMNe64mY3z8EzDidiLQvkGk1A</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETL - Inventario Bodega"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{492712AB-7E92-432A-ACC8-55F39F330280}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL - Inventario Bodega"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL - Inventario Bodega\División condicional"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="División condicional"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 1]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Filtro 1"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]} == "Escaner"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">pro_nombre == "Escaner"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 2]"
+                  description="Salida 2 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Filtro 2"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]} == "Tablet"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">pro_nombre == "Tablet"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 3]"
+                  description="Salida 3 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Filtro 3"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]} == "PC"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">pro_nombre == "PC"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 4]"
+                  description="Salida 4 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Filtro 4"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]} == "Impresora"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">pro_nombre == "Impresora"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">3</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 5]"
+                  description="Salida 5 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Filtro 5"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]} == "TV"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">pro_nombre == "TV"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">4</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 6]"
+                  description="Salida 6 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Filtro 6"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]} == "Laptop"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">pro_nombre == "Laptop"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">5</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 7]"
+                  description="Salida 7 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Filtro 7"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]} == "asd"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">pro_nombre == "asd"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">6</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Salida predeterminada de división condicional]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="Salida predeterminada de división condicional"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\invBodega"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="invBodega"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[productos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL - Inventario Bodega\invBodega.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.invBodega.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.invBodega.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_pro]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_pro]"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_pro]"
+                      name="id_pro"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[pro_nombre]"
+                      length="50"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_nombre]"
+                      name="pro_nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_cantidad]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[pro_cantidad]"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_cantidad]"
+                      name="pro_cantidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_precio]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[pro_precio]"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_precio]"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_fecha]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[pro_fecha]"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_fecha]"
+                      name="pro_fecha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_alm]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_alm]"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_alm]"
+                      name="id_alm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_sum]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_sum]"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_sum]"
+                      name="id_sum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_promo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_promo]"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_promo]"
+                      name="id_promo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_tiempo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_tiempo]"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_tiempo]"
+                      name="id_tiempo"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_pro]"
+                      dataType="i4"
+                      name="id_pro" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pro_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[pro_cantidad]"
+                      dataType="i4"
+                      name="pro_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[pro_precio]"
+                      dataType="numeric"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[pro_fecha]"
+                      dataType="dbDate"
+                      name="pro_fecha" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_alm]"
+                      dataType="i4"
+                      name="id_alm" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_sum]"
+                      dataType="i4"
+                      name="id_sum" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_promo]"
+                      dataType="i4"
+                      name="id_promo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].ExternalColumns[id_tiempo]"
+                      dataType="i4"
+                      name="id_tiempo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_pro]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_pro]"
+                      name="id_pro" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[pro_nombre]"
+                      name="pro_nombre" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[pro_cantidad]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[pro_cantidad]"
+                      name="pro_cantidad" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[pro_precio]"
+                      dataType="numeric"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[pro_precio]"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[pro_fecha]"
+                      dataType="dbDate"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[pro_fecha]"
+                      name="pro_fecha" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_alm]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_alm]"
+                      name="id_alm" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_sum]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_sum]"
+                      name="id_sum" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_promo]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_promo]"
+                      name="id_promo" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_tiempo]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[id_tiempo]"
+                      name="id_tiempo" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\Ordenar"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[id_pro]"
+                      cachedDataType="i4"
+                      cachedName="id_pro"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_pro]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_nombre]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[pro_cantidad]"
+                      cachedDataType="i4"
+                      cachedName="pro_cantidad"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_cantidad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[pro_precio]"
+                      cachedDataType="numeric"
+                      cachedName="pro_precio"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_precio]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[pro_fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="pro_fecha"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_fecha]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[id_alm]"
+                      cachedDataType="i4"
+                      cachedName="id_alm"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_alm]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">6</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[id_sum]"
+                      cachedDataType="i4"
+                      cachedName="id_sum"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_sum]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">7</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[id_promo]"
+                      cachedDataType="i4"
+                      cachedName="id_promo"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_promo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">8</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación].Columns[id_tiempo]"
+                      cachedDataType="i4"
+                      cachedName="id_tiempo"
+                      lineageId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_tiempo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">9</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]"
+                      name="id_pro"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_pro]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]"
+                      name="pro_nombre"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_nombre]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]"
+                      name="pro_cantidad"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_cantidad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]"
+                      dataType="numeric"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_precio]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]"
+                      dataType="dbDate"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]"
+                      name="pro_fecha"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[pro_fecha]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]"
+                      name="id_alm"
+                      sortKeyPosition="6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_alm]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]"
+                      name="id_sum"
+                      sortKeyPosition="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_sum]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]"
+                      name="id_promo"
+                      sortKeyPosition="8">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_promo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]"
+                      name="id_tiempo"
+                      sortKeyPosition="9">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB].Columns[id_tiempo]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\Productos 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Productos 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[fact_productos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL - Inventario Bodega\Productos 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[id_pro]"
+                      cachedDataType="i4"
+                      cachedName="id_pro"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[pro_cantidad]"
+                      cachedDataType="i4"
+                      cachedName="pro_cantidad"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[pro_precio]"
+                      cachedDataType="numeric"
+                      cachedName="pro_precio"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[pro_fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="pro_fecha"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[id_alm]"
+                      cachedDataType="i4"
+                      cachedName="id_alm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[id_sum]"
+                      cachedDataType="i4"
+                      cachedName="id_sum"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[id_promo]"
+                      cachedDataType="i4"
+                      cachedName="id_promo"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].Columns[id_tiempo]"
+                      cachedDataType="i4"
+                      cachedName="id_tiempo"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      dataType="i4"
+                      name="id_pro" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      dataType="i4"
+                      name="id_alm" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      dataType="i4"
+                      name="id_sum" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      dataType="i4"
+                      name="id_promo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      dataType="i4"
+                      name="id_tiempo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pro_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      dataType="i4"
+                      name="pro_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      dataType="numeric"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      dataType="dbDate"
+                      name="pro_fecha" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\Productos 1.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 1.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\Productos 2"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Productos 2"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[fact_productos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL - Inventario Bodega\Productos 2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[id_pro]"
+                      cachedDataType="i4"
+                      cachedName="id_pro"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[pro_cantidad]"
+                      cachedDataType="i4"
+                      cachedName="pro_cantidad"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[pro_precio]"
+                      cachedDataType="numeric"
+                      cachedName="pro_precio"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[pro_fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="pro_fecha"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[id_alm]"
+                      cachedDataType="i4"
+                      cachedName="id_alm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[id_sum]"
+                      cachedDataType="i4"
+                      cachedName="id_sum"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[id_promo]"
+                      cachedDataType="i4"
+                      cachedName="id_promo"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].Columns[id_tiempo]"
+                      cachedDataType="i4"
+                      cachedName="id_tiempo"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      dataType="i4"
+                      name="id_pro" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      dataType="i4"
+                      name="id_alm" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      dataType="i4"
+                      name="id_sum" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      dataType="i4"
+                      name="id_promo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      dataType="i4"
+                      name="id_tiempo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pro_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      dataType="i4"
+                      name="pro_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      dataType="numeric"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      dataType="dbDate"
+                      name="pro_fecha" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\Productos 2.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 2.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 2.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 2.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\Productos 3"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Productos 3"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[fact_productos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL - Inventario Bodega\Productos 3.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[id_pro]"
+                      cachedDataType="i4"
+                      cachedName="id_pro"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[pro_cantidad]"
+                      cachedDataType="i4"
+                      cachedName="pro_cantidad"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[pro_precio]"
+                      cachedDataType="numeric"
+                      cachedName="pro_precio"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[pro_fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="pro_fecha"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[id_alm]"
+                      cachedDataType="i4"
+                      cachedName="id_alm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[id_sum]"
+                      cachedDataType="i4"
+                      cachedName="id_sum"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[id_promo]"
+                      cachedDataType="i4"
+                      cachedName="id_promo"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].Columns[id_tiempo]"
+                      cachedDataType="i4"
+                      cachedName="id_tiempo"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      dataType="i4"
+                      name="id_pro" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      dataType="i4"
+                      name="id_alm" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      dataType="i4"
+                      name="id_sum" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      dataType="i4"
+                      name="id_promo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      dataType="i4"
+                      name="id_tiempo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pro_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      dataType="i4"
+                      name="pro_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      dataType="numeric"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      dataType="dbDate"
+                      name="pro_fecha" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\Productos 3.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 3.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 3.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 3.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\Productos 4"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Productos 4"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[fact_productos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL - Inventario Bodega\Productos 4.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[id_pro]"
+                      cachedDataType="i4"
+                      cachedName="id_pro"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[pro_cantidad]"
+                      cachedDataType="i4"
+                      cachedName="pro_cantidad"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[pro_precio]"
+                      cachedDataType="numeric"
+                      cachedName="pro_precio"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[pro_fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="pro_fecha"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[id_alm]"
+                      cachedDataType="i4"
+                      cachedName="id_alm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[id_sum]"
+                      cachedDataType="i4"
+                      cachedName="id_sum"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[id_promo]"
+                      cachedDataType="i4"
+                      cachedName="id_promo"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].Columns[id_tiempo]"
+                      cachedDataType="i4"
+                      cachedName="id_tiempo"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      dataType="i4"
+                      name="id_pro" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      dataType="i4"
+                      name="id_alm" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      dataType="i4"
+                      name="id_sum" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      dataType="i4"
+                      name="id_promo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      dataType="i4"
+                      name="id_tiempo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pro_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      dataType="i4"
+                      name="pro_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      dataType="numeric"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      dataType="dbDate"
+                      name="pro_fecha" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\Productos 4.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 4.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 4.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 4.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\Productos 5"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Productos 5"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[fact_productos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL - Inventario Bodega\Productos 5.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[id_pro]"
+                      cachedDataType="i4"
+                      cachedName="id_pro"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[pro_cantidad]"
+                      cachedDataType="i4"
+                      cachedName="pro_cantidad"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[pro_precio]"
+                      cachedDataType="numeric"
+                      cachedName="pro_precio"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[pro_fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="pro_fecha"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[id_alm]"
+                      cachedDataType="i4"
+                      cachedName="id_alm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[id_sum]"
+                      cachedDataType="i4"
+                      cachedName="id_sum"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[id_promo]"
+                      cachedDataType="i4"
+                      cachedName="id_promo"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].Columns[id_tiempo]"
+                      cachedDataType="i4"
+                      cachedName="id_tiempo"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      dataType="i4"
+                      name="id_pro" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      dataType="i4"
+                      name="id_alm" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      dataType="i4"
+                      name="id_sum" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      dataType="i4"
+                      name="id_promo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      dataType="i4"
+                      name="id_tiempo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pro_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      dataType="i4"
+                      name="pro_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      dataType="numeric"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      dataType="dbDate"
+                      name="pro_fecha" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\Productos 5.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 5.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 5.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 5.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\Productos 6"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Productos 6"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[fact_productos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL - Inventario Bodega\Productos 6.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[id_pro]"
+                      cachedDataType="i4"
+                      cachedName="id_pro"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[pro_cantidad]"
+                      cachedDataType="i4"
+                      cachedName="pro_cantidad"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[pro_precio]"
+                      cachedDataType="numeric"
+                      cachedName="pro_precio"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[pro_fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="pro_fecha"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[id_alm]"
+                      cachedDataType="i4"
+                      cachedName="id_alm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[id_sum]"
+                      cachedDataType="i4"
+                      cachedName="id_sum"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[id_promo]"
+                      cachedDataType="i4"
+                      cachedName="id_promo"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].Columns[id_tiempo]"
+                      cachedDataType="i4"
+                      cachedName="id_tiempo"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      dataType="i4"
+                      name="id_pro" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      dataType="i4"
+                      name="id_alm" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      dataType="i4"
+                      name="id_sum" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      dataType="i4"
+                      name="id_promo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      dataType="i4"
+                      name="id_tiempo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pro_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      dataType="i4"
+                      name="pro_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      dataType="numeric"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      dataType="dbDate"
+                      name="pro_fecha" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\Productos 6.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 6.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 6.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 6.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL - Inventario Bodega\Productos 7"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Productos 7"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[fact_productos]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL - Inventario Bodega\Productos 7.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.dw_invBodega.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[id_pro]"
+                      cachedDataType="i4"
+                      cachedName="id_pro"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_pro]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[pro_nombre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pro_nombre"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_nombre]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[pro_cantidad]"
+                      cachedDataType="i4"
+                      cachedName="pro_cantidad"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_cantidad]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[pro_precio]"
+                      cachedDataType="numeric"
+                      cachedName="pro_precio"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_precio]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[pro_fecha]"
+                      cachedDataType="dbDate"
+                      cachedName="pro_fecha"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[pro_fecha]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[id_alm]"
+                      cachedDataType="i4"
+                      cachedName="id_alm"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_alm]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[id_sum]"
+                      cachedDataType="i4"
+                      cachedName="id_sum"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_sum]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[id_promo]"
+                      cachedDataType="i4"
+                      cachedName="id_promo"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_promo]" />
+                    <inputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].Columns[id_tiempo]"
+                      cachedDataType="i4"
+                      cachedName="id_tiempo"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      lineageId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación].Columns[id_tiempo]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_pro]"
+                      dataType="i4"
+                      name="id_pro" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_alm]"
+                      dataType="i4"
+                      name="id_alm" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_sum]"
+                      dataType="i4"
+                      name="id_sum" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_promo]"
+                      dataType="i4"
+                      name="id_promo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[id_tiempo]"
+                      dataType="i4"
+                      name="id_tiempo" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_nombre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pro_nombre" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_cantidad]"
+                      dataType="i4"
+                      name="pro_cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_precio]"
+                      dataType="numeric"
+                      name="pro_precio"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB].ExternalColumns[pro_fecha]"
+                      dataType="dbDate"
+                      name="pro_fecha" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL - Inventario Bodega\Productos 7.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 7.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL - Inventario Bodega\Productos 7.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL - Inventario Bodega\Productos 7.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Filtro 1]"
+              endId="Package\ETL - Inventario Bodega\Productos 1.Inputs[Entrada de destino de OLE DB]"
+              name="Filtro 1"
+              startId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 1]" />
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Filtro 2]"
+              endId="Package\ETL - Inventario Bodega\Productos 2.Inputs[Entrada de destino de OLE DB]"
+              name="Filtro 2"
+              startId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 2]" />
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Filtro 3]"
+              endId="Package\ETL - Inventario Bodega\Productos 3.Inputs[Entrada de destino de OLE DB]"
+              name="Filtro 3"
+              startId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 3]" />
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Filtro 4]"
+              endId="Package\ETL - Inventario Bodega\Productos 4.Inputs[Entrada de destino de OLE DB]"
+              name="Filtro 4"
+              startId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 4]" />
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Filtro 5]"
+              endId="Package\ETL - Inventario Bodega\Productos 5.Inputs[Entrada de destino de OLE DB]"
+              name="Filtro 5"
+              startId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 5]" />
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Filtro 6]"
+              endId="Package\ETL - Inventario Bodega\Productos 6.Inputs[Entrada de destino de OLE DB]"
+              name="Filtro 6"
+              startId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 6]" />
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Filtro 7]"
+              endId="Package\ETL - Inventario Bodega\Productos 7.Inputs[Entrada de destino de OLE DB]"
+              name="Filtro 7"
+              startId="Package\ETL - Inventario Bodega\División condicional.Outputs[Filtro 7]" />
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Salida de ordenación]"
+              endId="Package\ETL - Inventario Bodega\División condicional.Inputs[Entrada de división condicional]"
+              name="Salida de ordenación"
+              startId="Package\ETL - Inventario Bodega\Ordenar.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\ETL - Inventario Bodega.Paths[Salida de origen de OLE DB]"
+              endId="Package\ETL - Inventario Bodega\Ordenar.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\ETL - Inventario Bodega\invBodega.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="194,42"
+          Id="Package\ETL - Inventario Bodega"
+          TopLeft="306,71" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ETL - Inventario Bodega">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="128,42"
+          Id="Package\ETL - Inventario Bodega\invBodega"
+          TopLeft="393.111111111111,34" />
+        <NodeLayout
+          Size="117,42"
+          Id="Package\ETL - Inventario Bodega\Ordenar"
+          TopLeft="396.666666666667,120" />
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Salida de origen de OLE DB]"
+          TopLeft="456.138888888889,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\ETL - Inventario Bodega\División condicional"
+          TopLeft="367.777777777778,205.555555555556" />
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Salida de ordenación]"
+          TopLeft="454.222222222222,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.5555555555556"
+              Start="0,0"
+              End="0,36.0555555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.0555555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135,42"
+          Id="Package\ETL - Inventario Bodega\Productos 1"
+          TopLeft="16.6666666666667,304.444444444444" />
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Filtro 1]"
+          TopLeft="453.277777777778,247.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-369.111111111111,56.8888888888888"
+              Start="0,0"
+              End="-369.111111111111,49.3888888888888">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4444444444444" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4444444444444"
+                    Point2="0,28.4444444444444"
+                    Point3="-4,28.4444444444444" />
+                  <mssgle:LineSegment
+                    End="-365.111111111111,28.4444444444444" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-365.111111111111,28.4444444444444"
+                    Point2="-369.111111111111,28.4444444444444"
+                    Point3="-369.111111111111,32.4444444444444" />
+                  <mssgle:LineSegment
+                    End="-369.111111111111,49.3888888888888" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-200.156121961806,33.4444444444444,31.2011328125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="135,42"
+          Id="Package\ETL - Inventario Bodega\Productos 2"
+          TopLeft="115.555555555556,356.666666666667" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\ETL - Inventario Bodega\Productos 3"
+          TopLeft="227.777777777778,304.444444444445" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\ETL - Inventario Bodega\Productos 4"
+          TopLeft="351.111111111111,356.666666666667" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\ETL - Inventario Bodega\Productos 5"
+          TopLeft="471.111111111111,303.333333333333" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\ETL - Inventario Bodega\Productos 6"
+          TopLeft="582.222222222222,356.666666666667" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\ETL - Inventario Bodega\Productos 7"
+          TopLeft="707.777777777778,302.222222222222" />
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Filtro 2]"
+          TopLeft="480.444444444444,247.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-297.388888888889,109.111111111111"
+              Start="0,0"
+              End="-297.388888888889,101.611111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2513196858504" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.2513196858504"
+                    Point2="0,44.2513196858504"
+                    Point3="-4,44.2513196858504" />
+                  <mssgle:LineSegment
+                    End="-293.388888888889,44.2513196858504" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-293.388888888889,44.2513196858504"
+                    Point2="-297.388888888889,44.2513196858504"
+                    Point3="-297.388888888889,48.2513196858504" />
+                  <mssgle:LineSegment
+                    End="-297.388888888889,101.611111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-164.480557725694,49.2513196858504,31.5722265625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Filtro 3]"
+          TopLeft="494.027777777778,247.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-198.75,56.8888888888889"
+              Start="0,0"
+              End="-198.75,49.3888888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5453188313073" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5453188313073"
+                    Point2="0,19.5453188313073"
+                    Point3="-4,19.5453188313073" />
+                  <mssgle:LineSegment
+                    End="-194.75,19.5453188313073" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-194.75,19.5453188313073"
+                    Point2="-198.75,19.5453188313073"
+                    Point3="-198.75,23.5453188313073" />
+                  <mssgle:LineSegment
+                    End="-198.75,49.3888888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-115.09763671875,24.5453188313073,31.4452734375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Filtro 4]"
+          TopLeft="502.177777777778,247.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83.5666666666665,109.111111111111"
+              Start="0,0"
+              End="-83.5666666666665,101.611111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.7065247065247" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.7065247065247"
+                    Point2="0,32.7065247065247"
+                    Point3="-4,32.7065247065247" />
+                  <mssgle:LineSegment
+                    End="-79.5666666666665,32.7065247065247" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.5666666666665,32.7065247065247"
+                    Point2="-83.5666666666665,32.7065247065247"
+                    Point3="-83.5666666666665,36.7065247065247" />
+                  <mssgle:LineSegment
+                    End="-83.5666666666665,101.611111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-57.6646614583333,37.7065247065247,31.76265625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Filtro 5]"
+          TopLeft="507.611111111111,247.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31,55.7777777777778"
+              Start="0,0"
+              End="31,48.2777777777778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9006349206349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9006349206349"
+                    Point2="0,14.9006349206349"
+                    Point3="4,14.9006349206349" />
+                  <mssgle:LineSegment
+                    End="27,14.9006349206349" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27,14.9006349206349"
+                    Point2="31,14.9006349206349"
+                    Point3="31,18.9006349206349" />
+                  <mssgle:LineSegment
+                    End="31,48.2777777777778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-0.244609374999998,19.9006349206349,31.48921875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Filtro 6]"
+          TopLeft="494.027777777778,247.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.694444444445,109.111111111111"
+              Start="0,0"
+              End="155.694444444445,101.611111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4873107272339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.4873107272339"
+                    Point2="0,37.4873107272339"
+                    Point3="4,37.4873107272339" />
+                  <mssgle:LineSegment
+                    End="151.694444444445,37.4873107272339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="151.694444444445,37.4873107272339"
+                    Point2="155.694444444445,37.4873107272339"
+                    Point3="155.694444444445,41.4873107272339" />
+                  <mssgle:LineSegment
+                    End="155.694444444445,101.611111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="62.0049565972223,42.4873107272339,31.68453125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL - Inventario Bodega.Paths[Filtro 7]"
+          TopLeft="514.402777777778,247.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="260.875,54.6666666666667"
+              Start="0,0"
+              End="260.875,47.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.12741751990898" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.12741751990898"
+                    Point2="0,12.127417519909"
+                    Point3="4,12.127417519909" />
+                  <mssgle:LineSegment
+                    End="256.875,12.127417519909" />
+                  <mssgle:CubicBezierSegment
+                    Point1="256.875,12.127417519909"
+                    Point2="260.875,12.127417519909"
+                    Point3="260.875,16.127417519909" />
+                  <mssgle:LineSegment
+                    End="260.875,47.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="114.61232421875,17.127417519909,31.6503515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL - Inventario Bodega\invBodega">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL - Inventario Bodega\Productos 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL - Inventario Bodega\Productos 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL - Inventario Bodega\Productos 3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL - Inventario Bodega\Productos 4">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL - Inventario Bodega\Productos 5">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL - Inventario Bodega\Productos 6">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL - Inventario Bodega\Productos 7">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
